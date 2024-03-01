@@ -2,14 +2,36 @@ import React,{useState} from 'react'   // rfc shortcut to create
 
 
 export default function TextForm(props) {
+
+    // upper case
     const handleUpclick = () =>{
         // console.log("uppercase was clicked" + text);
         let newText = text.toUpperCase();
         setText(newText)
     }
+
+    // lower case
     const handleLoclick =()=>{
         let newText = text.toLowerCase();
         setText(newText)
+    }
+
+    // clean text
+    const handleclean = () =>{
+        let newText = ""
+        setText(newText)
+    }
+
+    // remove Extra white spaces in text
+    const handleExtraSpaces = () => {
+        let newText = text.split(/[ ]+/);
+        setText(newText.join(" "))
+    }
+    // copy the text
+    const handlecopy = ()=>{
+        var text = document.getElementById("myBox")
+        text.select();
+        navigator.clipboard.writeText(text.value);
     }
 
     const handleOnchange = (event) =>{
@@ -29,6 +51,9 @@ export default function TextForm(props) {
         </div>
         <button className="btn btn-primary mx-2" onClick={handleUpclick}>Convert to Uppercase</button>
         <button className="btn btn-primary mx-2" onClick={handleLoclick}>Convert to Lowercase</button>
+        <button className="btn btn-primary mx-2" onClick={handlecopy}>Copy Text</button>
+        <button className="btn btn-primary mx-2" onClick={handleclean}>clean text</button>
+        <button className="btn btn-primary mx-2" onClick={handleExtraSpaces}>Remove white spaces</button>
     </div>
     <div className="container my-3">
         <h2>Your Text summary</h2>
