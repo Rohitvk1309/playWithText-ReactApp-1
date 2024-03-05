@@ -25,11 +25,24 @@ function App() {
       setmode('dark')
       document.body.style.backgroundColor ='#042743'
       showAlert("dark mode has been enabled","success")
+      // document.title = "dark mode enable"
+
+// this is for show something in every sec like virus and all.....
+      // setInterval(() => {
+      //   document.title = 'playWithText is amazing Mode'
+      // }, 2000);
+
+      // setInterval(() => {
+      //   document.title='install playWithText Now'
+      // }, 1500);
+
+
     }
     else{
       setmode('light')
       document.body.style.backgroundColor ='white'
       showAlert("light mode has been enabled","success")
+      // document.title = "light mode enable"
     }
 
   }
