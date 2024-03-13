@@ -3,7 +3,17 @@ import './Appa.css';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import Alert from './components/Alert';
-// import About from './components/About';
+import About from './components/About';
+import {Routes} from 'react-router'
+import React from "react";
+
+
+import {
+  BrowserRouter as Router,
+  // Switch,
+  Route
+  // Link
+} from "react-router-dom";
 
 function App() {
   const [mode, setmode] = useState('light'); // weather dark mode is enable or not
@@ -51,12 +61,21 @@ function App() {
     <>
       {/* <Navbar title="Textutils" AboutText="About us" />
       <Navbar/> */}
+      <Router>
       <Navbar title="TextUtils" mode={mode} toggleMode = {toggleMode} />
       <Alert alert = {alert}/>
       <div className="container my-3">
-      <TextForm showAlert={showAlert} heading = "Enter the text area" mode={mode}/>
-      {/* <About/> */}
+        {/* <Switch> */}
+            <Routes >
+            <Route exact path="/about" element={<About  mode={mode}/>}> </Route>
+            <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Enter the text area" mode={mode} />}></Route>
+            </Routes>
+            {/* <Router path="/">
+              {/* <TextForm showAlert={showAlert} heading = "Enter the text area" mode={mode}/> */}
+            {/* </Router> */} */
+        {/* </Switch>  */}
       </div>
+      </Router>
     </>
   );
 }
