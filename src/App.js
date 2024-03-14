@@ -75,7 +75,7 @@ function App() {
             {/* </Router> */} */
         {/* </Switch>  */}
       </div>
-      </Router>
+      </Router>    
     </>
   );
 }
