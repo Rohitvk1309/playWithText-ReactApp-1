@@ -28,16 +28,24 @@ function App() {
       setAlert(null)
     }, 1500);
   }
-
-
-  const toggleMode= () =>{
+  // const removeclasses = ()=>{
+  //   document.body.classList.remove('bg-light')
+  //   document.body.classList.remove('bg-dark')
+  //   document.body.classList.remove('bg-warning')
+  //   document.body.classList.remove('bg-danger')
+  //   document.body.classList.remove('bg-success')
+  // }
+  const toggleMode= (cls) =>{
+  // const toggleMode= (cls) =>{
+  //   removeclasses();
+  //   document.body.classList.add('bg-'+cls)
     if(mode === 'light'){
       setmode('dark')
       document.body.style.backgroundColor ='#042743'
       showAlert("dark mode has been enabled","success")
       // document.title = "dark mode enable"
 
-// this is for show something in every sec like virus and all.....
+     // this is for show something in every sec like virus and all.....
       // setInterval(() => {
       //   document.title = 'playWithText is amazing Mode'
       // }, 2000);
@@ -72,8 +80,8 @@ function App() {
             </Routes>
             {/* <Router path="/">
               {/* <TextForm showAlert={showAlert} heading = "Enter the text area" mode={mode}/> */}
-            {/* </Router> */} */
-        {/* </Switch>  */}
+            {/* </Router> */} 
+        {/* </Switch>  */}  
       </div>
       </Router>    
     </>
